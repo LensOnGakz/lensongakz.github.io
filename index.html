@@ -30,15 +30,12 @@
       color: red;
       margin: 0;
       font-size: 2rem;
-      animation: fadeIn 1s ease-in forwards;
     }
     nav a {
       color: red;
       text-decoration: none;
       margin-left: 1.5rem;
       font-size: 1rem;
-      animation: fadeIn 1s ease-in forwards;
-      animation-delay: 0.3s;
     }
     nav a:hover {
       text-decoration: underline;
@@ -57,14 +54,11 @@
       font-size: 4rem;
       color: red;
       margin: 0;
-      animation: fadeInUp 1s ease-in forwards;
     }
     header h2 {
       color: #a9a9a9;
       font-size: 1.5rem;
       margin-top: 1rem;
-      animation: fadeInUp 1s ease-in forwards;
-      animation-delay: 0.5s;
     }
     .intro {
       max-width: 800px;
@@ -73,18 +67,10 @@
       font-size: 1.2rem;
       line-height: 1.6;
       color: #a9a9a9;
-      text-align: center;
-      animation: fadeIn 1s ease-in forwards;
-      animation-delay: 0.3s;
     }
-    .intro img {
-      max-width: 200px;
-      border: 2px solid red;
-      border-radius: 8px;
-      display: block;
-      margin: 2rem auto;
-      animation: fadeIn 1s ease-in forwards;
-      animation-delay: 0.6s;
+    .intro h3 {
+      color: red;
+      margin-top: 2rem;
     }
     .portfolio {
       padding: 4rem 2rem;
@@ -98,8 +84,7 @@
       padding: 1rem;
       text-align: center;
       color: #a9a9a9;
-      transition: transform 0.3s, opacity 0.3s;
-      animation: fadeIn 1s ease-in forwards;
+      transition: transform 0.3s;
     }
     .portfolio .card:hover {
       transform: scale(1.03);
@@ -108,17 +93,15 @@
       width: 100%;
       height: auto;
       border: 1px solid red;
-      transition: transform 0.3s;
     }
-    .portfolio .card img:hover {
-      transform: scale(1.05);
+    .placeholder {
+      display: none;
     }
     footer {
       background-color: #111;
       text-align: center;
       padding: 2rem;
       border-top: 2px solid red;
-      animation: fadeIn 1s ease-in forwards;
     }
     footer a {
       color: red;
@@ -127,16 +110,6 @@
     }
     footer a:hover {
       text-decoration: underline;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -156,10 +129,14 @@
   </header>
 
   <section class="intro">
-    <img src="images/bio.jpg" alt="Trevor Gakz portrait">
-    <p>Welcome to LensOnGakz — where every frame tells a story. I'm Trevor, a dedicated photographer with years of experience capturing the soul of the city through a lens. My journey began in the heart of urban landscapes, where I found inspiration in gritty textures, raw emotion, and the subtle interplay of shadow and light. From impromptu street portraits to curated studio sessions, my work spans a wide range of genres but is always grounded in authenticity and artistic intention.</p>
-    <p>What sets my photography apart is a deep connection to storytelling — whether it's documenting the quiet resilience of everyday moments or highlighting bold fashion statements under neon city lights. Over the years, I've worked with creatives, models, and brands to produce visual content that resonates. My approach is immersive and intuitive, often blending traditional composition with a cinematic touch to create impactful imagery.</p>
-    <p>LensOnGakz is more than a portfolio — it's a visual diary, a creative playground, and a gateway for collaboration. I invite you to explore the portfolio, connect with the visuals, and reach out if you're ready to create something bold, beautiful, and unforgettable.</p>
+    <h3>Welcome to LensOnGakz</h3>
+    <p>Welcome to LensOnGakz, where every frame tells a story. I'm Trevor, a passionate photographer with years of experience capturing the soul of the city through my lens. My journey began amidst urban landscapes, where I discovered inspiration in gritty textures, raw emotion, and the subtle interplay of shadow and light. My work spans a diverse range of genres, from impromptu street portraits to curated studio sessions, always rooted in authenticity and artistic intention.</p>
+
+    <h3>My Unique Approach to Storytelling</h3>
+    <p>What truly distinguishes my photography is a profound commitment to storytelling. I aim to document the quiet resilience of everyday moments and highlight bold fashion statements beneath neon city lights. Over the years, I've collaborated with creatives, models, and brands to produce resonant visual content. My approach is both immersive and intuitive, often blending traditional composition with a cinematic touch to create impactful imagery.</p>
+
+    <h3>Explore and Collaborate with LensOnGakz</h3>
+    <p>LensOnGakz is more than just a portfolio; it's a visual diary, a creative playground, and a gateway for collaboration. I invite you to explore my work, connect with the visuals, and reach out when you're ready to create something bold, beautiful, and unforgettable.</p>
   </section>
 
   <section id="portfolio" class="portfolio">
