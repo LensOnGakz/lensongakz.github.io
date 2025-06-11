@@ -13,6 +13,7 @@
       font-family: 'Times New Roman', serif;
       background-color: #000;
       color: #a9a9a9;
+      transition: background-color 1s;
     }
     nav {
       position: fixed;
@@ -25,6 +26,10 @@
       align-items: center;
       border-bottom: 2px solid red;
       z-index: 10;
+      transition: background-color 0.5s ease;
+    }
+    nav h1, nav a {
+      transition: color 0.5s ease;
     }
     nav h1 {
       color: red;
@@ -36,11 +41,9 @@
       text-decoration: none;
       margin-left: 1.5rem;
       font-size: 1rem;
-      transition: color 0.3s ease, background-color 0.3s ease;
     }
     nav a:hover {
       text-decoration: underline;
-      background-color: rgba(255, 255, 255, 0.1);
     }
     header {
       height: 100vh;
@@ -56,11 +59,17 @@
       font-size: 4rem;
       color: red;
       margin: 0;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
     }
     header h2 {
       color: #a9a9a9;
       font-size: 1.5rem;
       margin-top: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1.5s ease forwards;
     }
     .intro {
       max-width: 800px;
@@ -69,10 +78,13 @@
       font-size: 1.2rem;
       line-height: 1.6;
       color: #a9a9a9;
+      text-align: center;
     }
-    .intro h3 {
-      color: red;
-      margin-top: 2rem;
+    .intro p {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.5s;
     }
     .portfolio {
       padding: 4rem 2rem;
@@ -87,14 +99,22 @@
       text-align: center;
       color: #a9a9a9;
       transition: transform 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
     }
-    .portfolio .card:hover {
-      transform: scale(1.03);
+    .portfolio .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.6s ease-in-out;
     }
     .portfolio .card img {
       width: 100%;
       height: auto;
       border: 1px solid red;
+      transition: transform 0.5s;
+    }
+    .portfolio .card:hover img {
+      transform: scale(1.05);
     }
     .placeholder {
       display: none;
@@ -112,6 +132,13 @@
     }
     footer a:hover {
       text-decoration: underline;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -131,41 +158,18 @@
   </header>
 
   <section class="intro">
-    <h3>Welcome to LensOnGakz</h3>
-    <p>Welcome to LensOnGakz, where every frame has a tale to tell. I'm Trevor, a photographer with a burning desire to photograph cities after many years of experience in that field. My journey began amidst urban landscapes, where gritty texture and raw emotion interplayed with subtle shadows and light to inspire me. My varied work encompasses the whole spectrum from spontaneous street photography to premeditated studio shoots, with every work being about truth and artistic intention.</p>
-
-    <h3>My Unique Approach to Storytelling</h3>
-    <p>A genuine devotion to storytelling distinguishes most of my photography from the others. I set out to catch the quiet defiance in a mundane moment and capture a fashion statement that glows under neon city lights. Over the years, I've partnered with creatives, models, and brands in making visual content that speaks. I engage deeply and intuitively in my process, usually contrasting traditional pictorial architectural inversions with a cinematographic flair to imprint a heavy emotion.</p>
-
-    <h3>Explore and Collaborate with LensOnGakz</h3>
-    <p>LensOnGakz is more than just a portfolio; it's a visual diary, a creative playground, and a gateway for collaboration. I invite you to explore my work, connect with the visuals, and reach out when you're ready to create something bold, beautiful, and unforgettable.Where words fall short, my camera speaks.</p>
+    <p>Welcome to LensOnGakz — where every frame tells a story. I'm Trevor, a dedicated photographer with years of experience capturing the soul of the city through a lens. My journey began in the heart of urban landscapes, where I found inspiration in gritty textures, raw emotion, and the subtle interplay of shadow and light. From impromptu street portraits to curated studio sessions, my work spans a wide range of genres but is always grounded in authenticity and artistic intention.</p>
+    <p>What sets my photography apart is a deep connection to storytelling — whether it's documenting the quiet resilience of everyday moments or highlighting bold fashion statements under neon city lights. Over the years, I've worked with creatives, models, and brands to produce visual content that resonates. My approach is immersive and intuitive, often blending traditional composition with a cinematic touch to create impactful imagery.</p>
+    <p>LensOnGakz is more than a portfolio — it's a visual diary, a creative playground, and a gateway for collaboration. I invite you to explore the portfolio, connect with the visuals, and reach out if you're ready to create something bold, beautiful, and unforgettable.</p>
   </section>
 
   <section id="portfolio" class="portfolio">
-    <div class="card">
-      <img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+1" alt="Sample 1">
-      <p>Urban Portrait</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+2" alt="Sample 2">
-      <p>Street Style</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+3" alt="Sample 3">
-      <p>Low Light Mood</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+4" alt="Sample 4">
-      <p>City Vibes</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+5" alt="Sample 5">
-      <p>Red Tones</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+6" alt="Sample 6">
-      <p>Studio Look</p>
-    </div>
+    <div class="card"><img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+1" alt="Sample 1"><p>Urban Portrait</p></div>
+    <div class="card"><img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+2" alt="Sample 2"><p>Street Style</p></div>
+    <div class="card"><img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+3" alt="Sample 3"><p>Low Light Mood</p></div>
+    <div class="card"><img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+4" alt="Sample 4"><p>City Vibes</p></div>
+    <div class="card"><img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+5" alt="Sample 5"><p>Red Tones</p></div>
+    <div class="card"><img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+6" alt="Sample 6"><p>Studio Look</p></div>
   </section>
 
   <footer>
@@ -175,5 +179,22 @@
       <a href="https://www.instagram.com/_.trxv0r/" target="_blank">Instagram</a>
     </p>
   </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.portfolio .card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 </body>
 </html>
