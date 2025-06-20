@@ -153,6 +153,8 @@
       }
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
   <canvas id="lightning-bg"></canvas>
@@ -170,11 +172,11 @@
   </header>
   <section class="intro">
     <h3>Welcome to LensOnGakz</h3>
-    <p>Welcome to LensOnGakz — where every frame is a story. I'm Trevor, an avid photographer with many years of experience in capturing the spirit of the city through a lens. My journey began at the heart of cityscapes, where I was captivated by grimy textures, raw emotions, and the soft dance of shadow and light. From impromptu street portraits to thoughtful studio shoots, my photography spans a wide range of genres but is always grounded in purpose and authenticity.</p>
+    <p class="reveal">Welcome to LensOnGakz — where every frame is a story. I'm Trevor, an avid photographer with many years of experience in capturing the spirit of the city through a lens. My journey began at the heart of cityscapes, where I was captivated by grimy textures, raw emotions, and the soft dance of shadow and light. From impromptu street portraits to thoughtful studio shoots, my photography spans a wide range of genres but is always grounded in purpose and authenticity.</p>
     <h3>My Unique Approach to Storytelling</h3>
-    <p>What sets my photography apart is a powerful connection with storytelling — either a capture of the quiet resilience of everyday moments or a presentation of brash fashion claims against the glow of neon city life. My approach is experiential and intuitive, at times mixing formal composition with filmic aesthetic to produce strong images.</p>
+    <p class="reveal">What sets my photography apart is a powerful connection with storytelling — either a capture of the quiet resilience of everyday moments or a presentation of brash fashion claims against the glow of neon city life. My approach is experiential and intuitive, at times mixing formal composition with filmic aesthetic to produce strong images.</p>
     <h3>Explore and Collaborate with LensOnGakz</h3>
-    <p>LensOnGakz is not a portfolio — it's an eye log, an imagination playground, and an open invitation to collaborate. Please browse the portfolio, absorb the vibe of the images, and reach out if you're ready to create something bold, gorgeous, and never-to-be-forgotten.Painting with light, one shot at a time.</p>
+    <p class="reveal">LensOnGakz is not a portfolio — it's an eye log, an imagination playground, and an open invitation to collaborate. Please browse the portfolio, absorb the vibe of the images, and reach out if you're ready to create something bold, gorgeous, and never-to-be-forgotten.Painting with light, one shot at a time.</p>
   </section>
   <section id="portfolio" class="portfolio">
     <div class="card"><img src="https://via.placeholder.com/600x400/000000/FF0000?text=Sample+1" alt="Sample 1"><p>Urban Portrait</p></div>
@@ -191,6 +193,28 @@
       <a href="https://www.instagram.com/_.trxv0r/" target="_blank">Instagram</a>
     </p>
   </footer>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    const revealEls = document.querySelectorAll('.reveal');
+    revealEls.forEach(el => {
+      gsap.fromTo(el, {
+        opacity: 0,
+        y: 30,
+        filter: 'blur(4px)'
+      }, {
+        opacity: 1,
+        y: 0,
+        filter: 'blur(0px)',
+        duration: 1,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 90%',
+          toggleActions: 'play none none none'
+        },
+        stagger: 0.1
+      });
+    });
+  </script>
   <script>
     const cards = document.querySelectorAll('.portfolio .card');
     const observer = new IntersectionObserver(entries => {
